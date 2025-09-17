@@ -1,0 +1,62 @@
+name: "Product Inventory Management"
+description: "Real-time inventory tracking for furniture products"
+
+table: "PRODUCT_INVENTORY"
+columns:
+  - name: "PRODUCT_NAME"
+    type: "VARCHAR(100)"
+    description: "Name of the furniture product"
+    values:
+      - "Executive Oak Desk"
+      - "Modern Sectional Sofa"
+      - "Rustic Dining Table"
+      - "Ergonomic Office Chair"
+      - "Industrial Bookshelf"
+      - "Scandinavian Coffee Table"
+      - "Memory Foam Mattress"
+      - "Vintage Leather Armchair"
+      - "Glass Top End Table"
+      - "Upholstered Storage Bench"
+      - "Adjustable Standing Desk"
+      - "Velvet Accent Chair"
+
+  - name: "UNITS_AVAILABLE_ONLINE"
+    type: "INTEGER"
+    description: "Available inventory for online sales"
+    
+  - name: "UNITS_AVAILABLE_NORTHEAST"
+    type: "INTEGER"
+    description: "Northeast region warehouse inventory"
+    
+  - name: "UNITS_AVAILABLE_NORTHWEST"
+    type: "INTEGER"
+    description: "Northwest region warehouse inventory"
+    
+  - name: "UNITS_AVAILABLE_SOUTHEAST"
+    type: "INTEGER"
+    description: "Southeast region warehouse inventory"
+    
+  - name: "UNITS_AVAILABLE_SOUTHWEST"
+    type: "INTEGER"
+    description: "Southwest region warehouse inventory"
+    
+  - name: "INVENTORY_AS_OF_DATE"
+    type: "DATE"
+    description: "Date of inventory snapshot"
+
+thresholds:
+  critical_low: 1000
+  low_stock: 2500
+  optimal_min: 5000
+  optimal_max: 15000
+  overstock: 20000
+
+restock_rules:
+  high_volume: ["Ergonomic Office Chair", "Memory Foam Mattress"]
+  premium: ["Executive Oak Desk", "Modern Sectional Sofa"]
+  seasonal: ["Glass Top End Table", "Industrial Bookshelf"]
+
+business_questions:
+  - "Which furniture products risk stockout?"
+  - "How to optimize regional inventory distribution?"
+  - "Which products need immediate restocking?"
