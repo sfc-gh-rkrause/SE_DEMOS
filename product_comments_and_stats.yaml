@@ -1,0 +1,83 @@
+name: "Product Comments and Statistics"
+description: "Customer feedback analysis for furniture products"
+
+tables:
+  - name: "PRODUCT_COMMENT_STATS"
+    description: "Weekly review statistics"
+    columns:
+      - name: "PRODUCT_NAME"
+        type: "VARCHAR(100)"
+        values:
+          - "Executive Oak Desk"
+          - "Modern Sectional Sofa"
+          - "Rustic Dining Table"
+          - "Ergonomic Office Chair"
+          - "Industrial Bookshelf"
+          - "Scandinavian Coffee Table"
+          - "Memory Foam Mattress"
+          - "Vintage Leather Armchair"
+          - "Glass Top End Table"
+          - "Upholstered Storage Bench"
+          - "Adjustable Standing Desk"
+          - "Velvet Accent Chair"
+      
+      - name: "WEEK_NUMBER"
+        type: "INTEGER"
+        description: "Week since product launch"
+        
+      - name: "TOTAL_REVIEWS"
+        type: "INTEGER"
+        description: "Total reviews in week"
+        
+      - name: "POSITIVE_REVIEW_RATIO"
+        type: "FLOAT"
+        description: "Percentage positive reviews"
+        
+      - name: "AVG_SENTIMENT"
+        type: "FLOAT"
+        description: "Average sentiment score (-1 to 1)"
+        
+      - name: "SENTIMENT_PERCENTILE"
+        type: "FLOAT"
+        description: "Sentiment ranking vs other products"
+
+  - name: "DAILY_COMMENT_SUMMARY"
+    description: "Daily comment summaries"
+    columns:
+      - name: "PRODUCT_NAME"
+        type: "VARCHAR(100)"
+      - name: "DAY"
+        type: "DATE"
+      - name: "SUMMARY"
+        type: "TEXT"
+        description: "AI-generated daily summary"
+      - name: "AVERAGE_SENTIMENT"
+        type: "FLOAT"
+
+topics:
+  - "Design" # aesthetics, style, visual appeal
+  - "Quality" # build quality, materials, craftsmanship
+  - "Comfort" # ergonomics, user experience
+  - "Price" # value for money
+  - "Shipping" # delivery, packaging, assembly
+
+sentiment_levels:
+  very_positive: ">= 0.7"
+  positive: "0.3 to 0.7"
+  neutral: "-0.3 to 0.3" 
+  negative: "-0.7 to -0.3"
+  very_negative: "<= -0.7"
+
+trending_products:
+  - name: "Velvet Accent Chair"
+    status: "Trending Up"
+    sentiment_change: "+15.3%"
+  - name: "Adjustable Standing Desk"
+    status: "Trending Up" 
+    sentiment_change: "+8.7%"
+
+business_questions:
+  - "Which furniture has highest customer satisfaction?"
+  - "What drives negative sentiment by category?"
+  - "Which products show improving sentiment trends?"
+  - "How does sentiment correlate with sales?"

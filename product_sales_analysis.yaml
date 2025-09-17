@@ -1,0 +1,51 @@
+name: "Product Sales Analysis"
+description: "Weekly sales performance analysis for furniture products"
+
+table: "PRODUCT_SALES_ANALYSIS"
+columns:
+  - name: "PRODUCT_NAME"
+    type: "VARCHAR(100)"
+    description: "Name of the furniture piece"
+    values:
+      - "Executive Oak Desk"
+      - "Modern Sectional Sofa"
+      - "Rustic Dining Table"
+      - "Ergonomic Office Chair"
+      - "Industrial Bookshelf"
+      - "Scandinavian Coffee Table"
+      - "Memory Foam Mattress"
+      - "Vintage Leather Armchair"
+      - "Glass Top End Table"
+      - "Upholstered Storage Bench"
+      - "Adjustable Standing Desk"
+      - "Velvet Accent Chair"
+
+  - name: "WEEK_NUMBER"
+    type: "INTEGER"
+    description: "Week number from product launch"
+    
+  - name: "TOTAL_SALES_UNITS"
+    type: "INTEGER"
+    description: "Total sales across all channels"
+    
+  - name: "SALES_GROWTH"
+    type: "FLOAT"
+    description: "Growth rate compared to previous period (%)"
+    
+  - name: "PERCENTILE"
+    type: "DOUBLE"
+    description: "Percentile ranking among all furniture pieces"
+    
+  - name: "IS_SIGNIFICANT"
+    type: "BOOLEAN"
+    description: "Whether difference is statistically significant"
+
+metrics:
+  - "Total furniture sales across all products"
+  - "Average weekly growth rate"
+  - "Top performing products (>75th percentile)"
+
+business_questions:
+  - "Which furniture products show strongest growth?"
+  - "How do new launches compare to established products?"
+  - "Which regions drive most sales growth?"
